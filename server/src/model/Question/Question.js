@@ -44,15 +44,21 @@ const questionSchema = new mongoose.Schema({
     required: true
   },
 
-  explanation: {
+  explanation: [{
     type: String, // Optional explanation for the correct answer
     default: ''
+  }],
+
+  marks: {
+    type: Number, // Optional explanation for the correct answer
+    required: true
   },
 
   createdAt: {
     type: Date,
     default: Date.now
   },
+
 
   updated_at: {
     type: Date,

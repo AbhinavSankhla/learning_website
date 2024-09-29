@@ -3,7 +3,7 @@ const Question = require("../../model/question/Question");
 const addQuestion = async(req,res) => {
     try {
         console.log(req.body)
-        const {questionText, options, correctAnswer, stream, subject, topic, difficulty, explanation} = req.body;
+        const {questionText, options, correctAnswer, stream, subject, topic, difficulty, explanation, marks} = req.body;
 
         const dataToInsert = new Question(
             {
@@ -14,7 +14,8 @@ const addQuestion = async(req,res) => {
                 subject, 
                 topic, 
                 difficulty, 
-                explanation
+                explanation,
+                marks
             }
         )
         const response = await dataToInsert.save()
